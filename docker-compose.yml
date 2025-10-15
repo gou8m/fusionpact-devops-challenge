@@ -9,6 +9,8 @@ services:
     ports:
       - "8000:8000"
     restart: unless-stopped
+    volumes:
+      - backend-data:/app/app/data
 
   frontend:
     build:
@@ -18,3 +20,6 @@ services:
     ports:
       - "80:80"
     restart: unless-stopped
+
+volumes:
+  backend-data:
